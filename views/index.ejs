@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.3/darkly/bootstrap.min.css" integrity="sha512-U4WaRm7u3LeQy69FgQcz1CBxA32VsI/OeUdcCC5iBbwdjbfRcE+9E2wnJjXPO/bRfrClPTDYTLgBOekcTiBEgQ==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/styles/style.css">
+  <title>Shortify</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="display-4 font-weight-bold mt-2"><i class="fas fa-link fa-1x"></i> Shortify</h1>
+    <p>Please enter a valid URL <u><strong>beginning with 'http://' or 'https://'</strong></u>. While the 'short URL' may end up being longer than the full URL, the purpose of this project is to demonstrate working with Bootstrap, Node.js, Express and MongoDB.</p>
+    <form action="/shortURL" method="POST" class="my-4 form-inline">
+      <label for="fullURL" class="sr-only">Url</label>
+      <input required type="url" name="fullURL" id="fullURL" placeholder="URL" class="form-control col mr-1">
+      <button type="submit" id="submit" class="btn btn-primary">Shorten URL</button>
+    </form>
+
+    <table class="table table-striped table-responsive-sm table-dark rounded">
+      <thead class="thead-green">
+        <tr>
+          <th id="th">Full URL</th>
+          <th id="th">Short URL</th>
+          <th id="th">Clicks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% shortURLs.forEach(shortURL => { %>
+          <tr>
+            <td><a href="<%= shortURL.full %>" target="_blank"><%= shortURL.full %></a></td>
+            <td><a href="<%= shortURL.short %>" target="_blank"><%= shortURL.short %></a></td>
+            <td id="clicks"><%= shortURL.clicks %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+  <footer>
+    <p>Designed & Developed with 🧡 by <a href="https://github.com/AndreiRacasan/" target="_blank" rel="noopener noreferrer">Andrei Racasan</a>.</p>
+  </footer>
+</body>
+</html>
