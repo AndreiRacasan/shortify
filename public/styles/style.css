@@ -152,14 +152,31 @@ footer {
 }
 
 footer p {
-  font-size: 0.9rem !important;
-  margin-bottom: 0.35rem;
+  font-size: 0.85rem !important;
+  margin-bottom: 0.5rem;
   color: rgba(255, 255, 255, 0.5);
   padding: 0rem 1rem;
 }
 
 footer p a {
-  font-size: 0.9rem !important;
-  margin-bottom: 0.25rem;
+  font-size: 0.85rem !important;
+  margin-bottom: 0.5rem;
   color: rgba(255, 202, 10, 0.5);
+}
+
+@media (max-width: 500px) {
+  * {
+    font-size: 1.05rem;
+  }
+  .container {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .container .display-4 {
+    font-size: 3rem;
+  }
+
+  #submit {
+    margin-top: 1rem;
+  }
 }
